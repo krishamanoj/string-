@@ -1,0 +1,10 @@
+every letter given a unique value 
+if summation of letters add up to the pattern to be matched ,string found 
+to avaoid collision let the unique number be a bit big and not a single digit 
+
+
+class Solution:
+    def repeatedStringMatch(self, a: str, b: str) -> int:
+        for i in range(len(b) // len(a) + 3):
+            if b in a*i: return i
+        return -1
