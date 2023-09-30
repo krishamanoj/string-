@@ -1,0 +1,24 @@
+class Solution
+{
+    public:
+    //Function to reverse words in a given string.
+    string reverseWords(string S) 
+    { 
+        // code here 
+          reverse(S.begin(), S.end());
+        
+        int left = 0;
+        for(int itr = 0; itr < S.length(); itr++)
+        {
+            if(S[itr] == '.')
+            {
+                reverse(S.begin() + left, S.begin() + itr);
+                left = itr + 1;
+            }
+        }
+        //last word is also reversed 
+        reverse(S.begin() + left, S.end());
+//to reverse all the remaining characters after the final .
+        return S;
+    } 
+};
